@@ -38,9 +38,9 @@ export default function Login() {
 
         await firebase.firestore().collection("users").add({
           userId: createdUserResult.user.uid,
-          username: username.toLocaleLowerCase(),
+          username: username.toLowerCase(),
           fullName,
-          emailAddress: emailAddress.toLocaleLowerCase(),
+          emailAddress: emailAddress.toLowerCase(),
           following: [],
           dateCreated: Date.now(),
         });
