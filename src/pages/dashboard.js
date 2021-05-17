@@ -11,8 +11,10 @@ export default function Dashboard() {
   return (
     <div className="bg-gray-background">
       <Header />
-      <div className="grid">
-        <Timeline />
+      <div className="grid grid-cols-3 gap-4 justify-between mx-auto max-w-screen-lg">
+        <div className="col-span-2">
+          <Timeline />
+        </div>
         <Sidebar />
       </div>
     </div>
