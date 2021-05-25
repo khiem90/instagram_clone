@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
-import * as ROUTES from "../../constants/routes";
 
 export default function User({ username, fullName }) {
   return !username || !fullName ? (
@@ -18,12 +17,9 @@ export default function User({ username, fullName }) {
             />
             <div className="grid mx-4">
               <p className="font-bold text-sm">{username}</p>
-              <p className="text-sm">{fullName}</p>
+              <p className="text-sm text-gray-light">{fullName}</p>
             </div>
           </div>
-        </Link>
-        <Link to={ROUTES.LOGIN} className="text-sm text-blue-light ml-3">
-          Switch
         </Link>
       </div>
     </>
