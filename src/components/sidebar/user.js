@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
-import * as ROUTES from "../constants/routes";
+import * as ROUTES from "../../constants/routes";
 
 export default function User({ username, fullName }) {
   return !username || !fullName ? (

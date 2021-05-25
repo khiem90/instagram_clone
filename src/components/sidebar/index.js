@@ -1,16 +1,16 @@
 import useUser from "../../hooks/use-user";
-import User from "../user";
-import Suggestions from "../suggestions";
+import User from "./user";
+import Suggestions from "./suggestions";
 
 export default function Sidebar() {
   const {
-    user: { fullName, userId, username },
+    user: { fullName, userId, username, following },
   } = useUser();
 
   return (
     <div className="p-4">
       <User username={username} fullName={fullName} />
-      <Suggestions userId={userId} />
+      <Suggestions userId={userId} following={following} />
     </div>
   );
 }
