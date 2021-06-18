@@ -1,10 +1,28 @@
 import { useRef } from "react";
 import PropTypes from "prop-types";
+import Header from "./header";
+import Image from "./image";
+import Actions from "./actions";
 
 export default function Post({ content }) {
-  console.log(content);
-  const { caption } = content;
-  return <p>{caption}</p>;
+  const commentInput = useRef(null);
+
+  const handleFocus = () => commentInput.current.focus();
+
+  console.log(handleFocus);
+
+  return (
+    <div className="rounded col-span-4 border bg-white border-gray-primary mb-12">
+      <Header username={content.username} />
+      <Image src={content.imageSrc} caption={content.caption} />
+      <Actions
+        docId={content.docId}
+        totalLikes={content.likes.length}
+        likedPhoto={content.userLikedPhoto}
+        handleFocus={handleFocus}
+      />
+    </div>
+  );
 }
 
 Post.propTypes = {
