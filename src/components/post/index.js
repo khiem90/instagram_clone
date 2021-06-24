@@ -9,8 +9,6 @@ export default function Post({ content }) {
 
   const handleFocus = () => commentInput.current.focus();
 
-  console.log(handleFocus);
-
   return (
     <div className="rounded col-span-4 border bg-white border-gray-primary mb-12">
       <Header username={content.username} />

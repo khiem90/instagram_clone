@@ -11,7 +11,7 @@ export default function User({ username, fullName }) {
         <Link to={`/p/${username}`} className="col-span-3">
           <div className="flex items-center cols-span-1">
             <img
-              className="rounded-full w-16 h-16 object-cover flex"
+              className="rounded-full w-14 h-14 object-cover flex"
               src={`/images/avatars/${username}.jpg`}
               alt={username}
             />
