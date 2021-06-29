@@ -9,11 +9,10 @@ export default function Dashboard() {
     document.title = "Instagram";
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, []);
-  console.log(window.innerWidth);
 
   return (
     <div className="bg-gray-background">
-      {window.innerWidth > 768 ? (
+      {width > 1024 ? (
         <>
           <Header />
           <div className="grid grid-cols-3 gap-4 justify-between mx-auto max-w-screen-lg">
@@ -22,10 +21,12 @@ export default function Dashboard() {
           </div>
         </>
       ) : (
-        <div className="mx-8">
+        <>
           <Header />
-          <Timeline />
-        </div>
+          <div className="mx-8">
+            <Timeline />
+          </div>
+        </>
       )}
     </div>
   );
