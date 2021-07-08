@@ -6,7 +6,7 @@ import UserContext from "../../context/user";
 export default function AddComment({
   docId,
   comments,
-  setcomments,
+  setComments,
   commentInput,
 }) {
   const [comment, setComment] = useState("");
@@ -18,7 +18,14 @@ export default function AddComment({
   const handleSubmitComment = (event) => {
     event.preventDefault();
 
-    return null;
+    setComments([{ displayName, comment }, ...comments]);
+    setComment("");
+
+    return firebase
+      .firestore()
+      .collection("photos")
+      .doc(docId)
+      .update({ comments: FieldValue.arrayUnion({ displayName, comment }) });
   };
 
   return (
