@@ -10,12 +10,14 @@ module.exports = {
       white: "#ffffff",
       blue: {
         medium: "#005c98",
+        light: "#0095f6",
       },
       black: {
         light: "#262626",
         faded: "#00000059",
       },
       gray: {
+        light: "#8e8e8e",
         base: "#616161",
         background: "#fafafa",
         primary: "#dbdbdb",
